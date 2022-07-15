@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background:#000;
+        }
+
+        #cnv {
+            image-rendering: optimizeSpeed;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -o-crisp-edges;
+            image-rendering: crisp-edges;
+            -ms-interpolation-mode: nearest-neighbor;
+            width: 500px;
+            image-rendering: pixelated;
+        }
+        .ds{
+            display:flex;
+            width:100%;
+            min-height:500px;
+            justify-content:space-around;
+            z-index:999;
+        }
+        .ds-1{
+            width:50px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-right:10px;
+        }
+        .neuron{
+            width:80%;
+            aspect-ratio:1;
+            border-radius: 50%;
+            margin-top:5px;
+            margin-bottom:5px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color:#fff;
+            background:#000;
+        }
+        .lines{
+            top:0;
+            left:0;
+            margin: 0;
+            width:100%;
+            height:100%;
+            position:absolute;
+            z-index:1;
+        }
+        .hoverthing{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position:absolute;
+            z-index:9999;
+            font-size:30px;
+            pointer-events: none;
+            color:#fff;
+        }
+        .dn{
+            display:none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hoverthing dn"></div>
+    <div class="ds">
+    </div>
+    <div class="lines"></div>
+    <canvas id="cnv" width="16" height="16" class="dn"></canvas>
+    <script src="main.js"></script>
+</body>
+
+</html>
